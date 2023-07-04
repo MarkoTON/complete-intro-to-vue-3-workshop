@@ -31,13 +31,15 @@ export default {
 </script>
 
 <template>
-  <h2>Statistics</h2>
-  <ul>
-    <li
-      v-for="(stat, type) in benderStatistics"
-      :key="`bender-${stat}-${type}`"
-    >
-      {{ type }}: {{ stat * 2 }}
-    </li>
-  </ul>
+  <div>
+    <h2>Statistics</h2>
+    <ul>
+      <li
+        v-for="(stat, type) in benderStatistics"
+        :key="`bender-${stat}-${type}`"
+      >
+        {{ type }}: {{ stat * 2 }}
+      </li>
+    </ul>
+  </div>
 </template>
