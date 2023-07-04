@@ -65,26 +65,28 @@ export default {
 </script>
 
 <template>
-  <h1>{{ displayTitle }}</h1>
-  <p :data-increment-by="incrementAmount">{{ count }}</p>
-  <button @click="incrementCount">Increment Count</button>
-  <h1>{{ incrementAmount }}</h1>
-  <p>{{ optimizedIncrementAmount }}</p>
   <div>
-    <label for="incrementAmount">Increment by:</label>
-    <input type="text" v-model="incrementAmount" />
+    <h1>{{ displayTitle }}</h1>
+    <p :data-increment-by="incrementAmount">{{ count }}</p>
+    <button @click="incrementCount">Increment Count</button>
+    <h1>{{ incrementAmount }}</h1>
+    <p>{{ optimizedIncrementAmount }}</p>
+    <div>
+      <label for="incrementAmount">Increment by:</label>
+      <input type="text" v-model="incrementAmount" />
+    </div>
+    <hr />
+    <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
+    <p v-else>Odd: {{ message }}</p>
+    <ul v-for="(item, index) in listOfNumbers" :key="`item-${index}`">
+      <li>
+        {{ item.id }}
+        <ul>
+          <li v-for="(number, index) in item.list" :key="`number-${index}`">
+            {{ number }}
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
-  <hr />
-  <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
-  <p v-else>Odd: {{ message }}</p>
-  <ul v-for="(item, index) in listOfNumbers" :key="`item-${index}`">
-    <li>
-      {{ item.id }}
-      <ul>
-        <li v-for="(number, index) in item.list" :key="`number-${index}`">
-          {{ number }}
-        </li>
-      </ul>
-    </li>
-  </ul>
 </template>
