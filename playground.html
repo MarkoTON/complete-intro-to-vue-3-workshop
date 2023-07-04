@@ -91,6 +91,7 @@
           }
         },
         watch: {
+          // Watch vise da reaguje na evente kada se neke kockice sklope tek onda da opali unkciju. Dok je computed vise za raaktivnost u vezi samih vrednosti
           count(newValue) {
             if (newValue > 20) {
               this.counterTitle += ' Very Long'
