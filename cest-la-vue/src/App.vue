@@ -1,24 +1,26 @@
 <script></script>
 
 <template>
-  <header class="header">
-    <span class="logo">
-      <img src="@/assets/vue-heart.png" width="30" />C'est La Vue
-    </span>
-    <nav class="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/user">User</router-link>
-    </nav>
-  </header>
-
-  <p>This is a new message!</p>
-
-  <Suspense>
-    <router-view />
-
-    <template v-slot:fallback> Data is loading... </template>
-  </Suspense>
+  <div>
+    <header class="header">
+      <span class="logo">
+        <img src="@/assets/vue-heart.png" width="30" />C'est La Vue
+      </span>
+      <nav class="nav">
+        <router-link to="/">Home</router-link>
+        <router-link to="/login">Login</router-link>
+        <router-link to="/user">User</router-link>
+      </nav>
+    </header>
+  
+    <p>This is a new message!</p>
+  
+    <Suspense>
+      <router-view />
+  
+      <template v-slot:fallback> Data is loading... </template>
+    </Suspense>
+  </div>
 </template>
 
 <style>

@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from "vue";
 import { useUserStore } from "../stores/UserStore";
 
 const userStore = useUserStore();
@@ -14,7 +13,7 @@ const userStore = useUserStore();
     </p>
     <hr />
     <ul>
-      <li v-for="user in userStore.shortUserList">
+      <li v-for="user in userStore.shortUserList" :key="user.id">
         {{ user.name }}
       </li>
     </ul>
