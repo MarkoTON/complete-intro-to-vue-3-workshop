@@ -32,22 +32,24 @@ export default {
 </script>
 
 <template>
-  <header class="header">
-    <span class="logo">
-      <img src="@/assets/vue-heart.png" width="30" />C'est La Vue
-    </span>
-    <nav class="nav">
-      <a href="#" @click.prevent="showHomePage">Home</a>
-      <a href="#" @click.prevent="showLoginPage">Login</a>
-      <a href="#" @click.prevent="showUserPage">User</a>
-    </nav>
-  </header>
-
-  <Suspense>
-    <component :is="renderPage" :key="renderPage" />
-
-    <template v-slot:fallback> Data is loading... </template>
-  </Suspense>
+  <div>
+    <header class="header">
+      <span class="logo">
+        <img src="@/assets/vue-heart.png" width="30" />C'est La Vue
+      </span>
+      <nav class="nav">
+        <a href="#" @click.prevent="showHomePage">Home</a>
+        <a href="#" @click.prevent="showLoginPage">Login</a>
+        <a href="#" @click.prevent="showUserPage">User</a>
+      </nav>
+    </header>
+  
+    <Suspense>
+      <component :is="renderPage" :key="renderPage" />
+  
+      <template v-slot:fallback> Data is loading... </template>
+    </Suspense>
+  </div>
 </template>
 
 <style>
